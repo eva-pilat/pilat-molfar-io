@@ -4,6 +4,7 @@
 //
 //  Created by Eva Pilat on 19.11.2026.
 //
+
 import RealmSwift
 
 enum RealmConfig {
