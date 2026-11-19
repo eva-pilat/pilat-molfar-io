@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2FADB84530AF1BE6008D3AF0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2FADB84430AF1BE6008D3AF0 /* RealmSwift */; };
+		2FADB84830AF1BFC008D3AF0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FADB84730AF1BFC008D3AF0 /* SnapKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		2FADB82B30AF12F0008D3AF0 /* pilat-molfar-io.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "pilat-molfar-io.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FADB84530AF1BE6008D3AF0 /* RealmSwift in Frameworks */,
+				2FADB84830AF1BFC008D3AF0 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = "pilat-molfar-io";
 			packageProductDependencies = (
+				2FADB84430AF1BE6008D3AF0 /* RealmSwift */,
+				2FADB84730AF1BFC008D3AF0 /* SnapKit */,
 			);
 			productName = "pilat-molfar-io";
 			productReference = 2FADB82B30AF12F0008D3AF0 /* pilat-molfar-io.app */;
@@ -107,6 +116,10 @@
 			);
 			mainGroup = 2FADB82230AF12F0008D3AF0;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2FADB84330AF1BE6008D3AF0 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				2FADB84630AF1BFC008D3AF0 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2FADB82C30AF12F0008D3AF0 /* Products */;
 			projectDirPath = "";
@@ -150,7 +163,7 @@
 				INFOPLIST_FILE = "pilat-molfar-io/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -182,7 +195,7 @@
 				INFOPLIST_FILE = "pilat-molfar-io/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -345,6 +358,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2FADB84330AF1BE6008D3AF0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = community;
+				kind = branch;
+			};
+		};
+		2FADB84630AF1BFC008D3AF0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2FADB84430AF1BE6008D3AF0 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FADB84330AF1BE6008D3AF0 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		2FADB84730AF1BFC008D3AF0 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FADB84630AF1BFC008D3AF0 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2FADB82330AF12F0008D3AF0 /* Project object */;
 }
