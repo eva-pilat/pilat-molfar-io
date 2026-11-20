@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FADB84530AF1BE6008D3AF0 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2FADB84430AF1BE6008D3AF0 /* RealmSwift */; };
 		2FADB84830AF1BFC008D3AF0 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FADB84730AF1BFC008D3AF0 /* SnapKit */; };
 		2FADB84E30AF1E89008D3AF0 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2FADB84D30AF1E89008D3AF0 /* Kingfisher */; };
 /* End PBXBuildFile section */
@@ -43,7 +42,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FADB84E30AF1E89008D3AF0 /* Kingfisher in Frameworks */,
-				2FADB84530AF1BE6008D3AF0 /* RealmSwift in Frameworks */,
 				2FADB84830AF1BFC008D3AF0 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,7 +85,6 @@
 			);
 			name = "pilat-molfar-io";
 			packageProductDependencies = (
-				2FADB84430AF1BE6008D3AF0 /* RealmSwift */,
 				2FADB84730AF1BFC008D3AF0 /* SnapKit */,
 				2FADB84D30AF1E89008D3AF0 /* Kingfisher */,
 			);
@@ -120,7 +117,6 @@
 			mainGroup = 2FADB82230AF12F0008D3AF0;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				2FADB84330AF1BE6008D3AF0 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				2FADB84630AF1BFC008D3AF0 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				2FADB84C30AF1E89008D3AF0 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
@@ -364,14 +360,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2FADB84330AF1BE6008D3AF0 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = community;
-				kind = branch;
-			};
-		};
 		2FADB84630AF1BFC008D3AF0 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -391,11 +379,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2FADB84430AF1BE6008D3AF0 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2FADB84330AF1BE6008D3AF0 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
 		2FADB84730AF1BFC008D3AF0 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2FADB84630AF1BFC008D3AF0 /* XCRemoteSwiftPackageReference "SnapKit" */;

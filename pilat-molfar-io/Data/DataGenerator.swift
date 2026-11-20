@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RealmSwift
+import CoreData
 
 enum DataGenerator {
     static func generate(count: Int = 100_000,
@@ -14,39 +14,42 @@ enum DataGenerator {
                          batchSize: Int = 10_000,
                          photoIds: [String],
                          completion: @escaping (TimeInterval) -> Void) {
-        DispatchQueue.global(qos: .userInitiated).async {
+        let context = CoreDataStack.shared.newBackgroundContext()
+        
+        context.perform {
             let start = CFAbsoluteTimeGetCurrent()
-
-            autoreleasepool {
-                let realm = try! Realm()
-                try! realm.write {
-                    for _ in 0..<housesCount {
-                        let house = CatHouse()
-                        house.name = "\(houseNames.randomElement()!) №\(Int.random(in: 1...999))"
-                        realm.add(house)
-                    }
-                }
+            
+            var houses: [CatHouse] = []
+            for _ in 0..<housesCount {
+                let house = CatHouse(context: context)
+                house.id = UUID()
+                house.name = "\(houseNames.randomElement()!) №\(Int.random(in: 1...999))"
+                houses.append(house)
             }
-
+            try! context.save()
+            let houseIDs = houses.map(\.objectID)
+            context.reset()
+            
             var created = 0
             while created < count {
                 let n = min(batchSize, count - created)
                 autoreleasepool {
-                    let realm = try! Realm()
-                    let houses = Array(realm.objects(CatHouse.self))
-                    try! realm.write {
-                        for _ in 0..<n {
-                            let cat = Cat()
-                            cat.name = randomCatName()
-                            cat.age = Int.random(in: 1...18)
-                            cat.photoId = photoIds.randomElement()
-                            houses.randomElement()!.cats.append(cat)
-                        }
+                    let batchHouses = houseIDs.map { context.object(with: $0) as! CatHouse }
+                    for _ in 0..<n {
+                        let cat = Cat(context: context)
+                        cat.id = UUID()
+                        cat.name = randomCatName()
+                        cat.age = Int16.random(in: 1...18)
+                        cat.photoId = photoIds.randomElement()
+                        cat.createdAt = Date()
+                        cat.house = batchHouses.randomElement()!
                     }
+                    try! context.save()
+                    context.reset()
                 }
                 created += n
             }
-
+            
             let time = CFAbsoluteTimeGetCurrent() - start
             DispatchQueue.main.async { completion(time) }
         }
